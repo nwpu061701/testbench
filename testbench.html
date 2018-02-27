@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>testbench DOM</title>
+  <style>
+    p {
+	  color:yellow;
+	  font-family:"arial", sans-serif;
+	  font-size:1.2em;
+	}
+	
+	body {
+	  color: white;
+	  background-color: black;
+	}
+	
+	#purchase {
+	  background-color:#333;
+	  color: #ccc;
+	  padding: 1em;
+	}
+	
+	#purchase li {
+	  font-weight: bold;
+	}
+
+  
+  </style>
+</head>
+
+<body>
+    <h1>What to buy</h1>
+	<p title="a gentle reminder">Don't forget to buy this stuff.</p>
+	<ul id="purchase">
+	    <li>A tin of beans</li>
+		<li class="sale">Cheese</li>
+		<li class="sale important">Milk</li>
+	</ul>
+	<script>
+	    //alert( typeof document.getElementById("purchase"));
+		
+		var li=document.getElementsByTagName("li");
+		for (var i=0;i < li.length; i++)
+		{
+		    var liClass=li[i].getAttribute("class");
+			if(liClass) alert(liClass);
+		}
+		
+		var p=document.getElementsByTagName("p");
+		alert(p[0].getAttribute("title"));
+		p[0].setAttribute("title", "brand new title text");
+		alert(p[0].getAttribute("title"));
+		
+	</script>
+</body>
+</html>
